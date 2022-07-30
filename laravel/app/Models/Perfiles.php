@@ -10,8 +10,9 @@ class perfiles extends Model
     use HasUUID;
 
     protected $table = 'perfiles';
-    protected $primaryKey = 'id_perfil';
+    protected $primaryKey = 'id';
     public $incrementing = false;
     protected $keyType = 'string';
-    protected $uuidFieldName = 'id_perfil';
+    protected $uuidFieldName = 'id';
+
 }
