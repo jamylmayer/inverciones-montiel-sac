@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    
+    <div id="modalContainer">
+
+    </div>
+
+
+    <button onclick="abrirNuevoPerfil()">Nuevo perfil</button>
+
+
+
+
+<table id="tPerfiles" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    </table>
+
+
+<script type="text/javascript">
+var tListPerfiles;
+
+ tListPerfiles=$('#tPerfiles').DataTable({
+        ajax: 'http://apis.perfiles.com/api/v1/perfiles',
+        columns: [
+            { data: 'cod_perfil' },
+            { data: 'nombre_perfil' },
+            {
+                "targets": 2,
+                "render": function ( data, type, row, meta ) {
+                  return '<button>Editar</button><button>Eliminar</button>';
+                }
+              }
+            ],
+    });
+
+
+
+ function abrirNuevoPerfil()
+ {
+    $("#modalContainer").load("nuevo-perfil.html",function(){
+
+         $('#nuevoPerfil').modal("show");
+    });    
+ }
+
+ function recargarData()
+ {
+    tListPerfiles.ajax.reload();
+ }
+
+</script>
+
+</body>
+</html>

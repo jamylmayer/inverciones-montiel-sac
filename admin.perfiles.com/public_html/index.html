@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
+
+</head>
+<body>
+
+	<table id="tperfiles">
+		<thead>
+			<th>CODIGO</th>
+			<th>NOMBRE</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C001</td>
+				<td>NOMBRE 1</td>
+			</tr>
+			<tr>
+				<td>C002</td>
+				<td>NOMBRE 2</td>
+			</tr>
+		</tbody>
+	</table>
+
+<script type="text/javascript">
+	
+	var i;
+
+	for(i=0;i<10;i++)
+	{
+		if(i==5)
+		console.log("numero "+i);
+	}
+
+	var resp=suma(10,5);
+
+	var resp=suma(10,5);
+	var resp=suma(10,5);
+
+
+	var tabla1,tbody1; 
+
+	tabla1=document.getElementById("tperfiles");
+
+	tbody1=tabla1.children[1];
+
+	tbody1.innerHTML=tbody1.innerHTML+"<td>C004</td><td>Nombre 4</td>";
+	tbody1.innerHTML=tbody1.innerHTML+"<td>C004</td><td>Nombre 4</td>";
+	tbody1.innerHTML=tbody1.innerHTML+"<td>C004</td><td>Nombre 4</td>";
+	tbody1.innerHTML=tbody1.innerHTML+"<td>C004</td><td>Nombre 4</td>";
+	tbody1.innerHTML=tbody1.innerHTML+"<td>C004</td><td>Nombre 4</td>";
+	tbody1.innerHTML=tbody1.innerHTML+"<td>C004</td><td>Nombre 4</td>";
+
+	console.log(tbody1.innerHTML);
+
+
+   function suma(a,b)
+   {
+   	return a+b;
+   }
+
+</script>
+
+
+</body>
+</html> 

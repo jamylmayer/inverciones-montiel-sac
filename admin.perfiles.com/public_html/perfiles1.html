@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+	<table class="mytable">
+		<thead><tr><th>CODIGO</th><th>NOMBRE</th></tr></thead>
+	</table>
+
+	<script type="text/javascript">
+		
+		$.ajax(
+			{
+				type:"get",
+				url:"http://apis.perfiles.com/api/v1/perfiles",
+				data: {},
+				success:function(response)
+						{
+							//console.log(response.data);
+
+							for(i=0;i<response.data.length;i++)
+							{
+								console.log(response.data[i].nombre_perfil)
+
+								$(".mytable").append("<tr><td>"+response.data[i].cod_perfil+"</td><td>"+response.data[i].nombre_perfil+"</td></tr>")
+							}
+
+
+						}
+			}
+		);
+
+
+		console.log("ya pase la linea");
+		
+
+	</script>
+
+
+</body>
+</html>

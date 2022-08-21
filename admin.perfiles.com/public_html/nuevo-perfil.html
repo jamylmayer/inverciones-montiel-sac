@@ -1,0 +1,64 @@
+<div id="nuevoPerfil" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+        
+        <div class="row">
+            <div class="col-12">
+              <label for="txtcod_perfil" class="form-label">Codigo</label>
+              <input type="text" class="form-control" id="txtcod_perfil" placeholder="Ingrese codigo">
+            </div>
+            <div class="col-12">
+              <label for="txtNombre_perfil" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="txtNombre_perfil" placeholder="Ingrese nombre">
+            </div>
+        </div>
+
+
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="guardarPerfil()">Guardar</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  
+ function guardarPerfil()
+ {
+
+  $.ajax(
+      {
+        type:"post",
+        url:"http://apis.perfiles.com/api/v1/perfiles",
+        data: {cod_perfil:$("#txtcod_perfil").val(),nombre_perfil:$("#txtNombre_perfil").val()},
+        success:function(response)
+            {
+            
+                
+                $('#nuevoPerfil').modal("hide");
+
+                recargarData();
+
+
+            }
+      }
+    );
+
+
+
+ }
+
+
+</script>

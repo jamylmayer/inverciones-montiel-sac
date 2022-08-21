@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<style type="text/css">
+		
+		.mytable
+		{
+			border: 1px;
+			border-color: black;
+			border-style: solid;
+		}
+	</style>
+</head>
+<body>
+
+<table class="mytable" id="tperfiles">
+		<thead>
+			<th>CODIGO</th>
+			<th>NOMBRE</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C001</td>
+				<td>NOMBRE 1</td>
+			</tr>
+			<tr>
+				<td>C002</td>
+				<td>NOMBRE 2</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+	<script type="text/javascript">
+
+		var table1=$("#tperfiles");
+
+		$('#tperfiles tr:last').after('<tr><td>C003</td><td>C004</td></tr>');
+		$('#tperfiles tr:last').after('<tr><td>C003</td><td>C004</td></tr>');
+		$('#tperfiles tr:last').after('<tr><td>C003</td><td>C004</td></tr>');
+		$('#tperfiles tr:last').after('<tr><td>C003</td><td>C004</td></tr>');
+		$('#tperfiles tr:last').after('<tr><td>C003</td><td>C004</td></tr>');
+
+		
+
+		
+	</script>
+
+
+</body>
+</html>
